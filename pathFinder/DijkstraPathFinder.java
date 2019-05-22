@@ -75,7 +75,7 @@ public class DijkstraPathFinder implements PathFinder
 
     // making sure the node is a valid location on the board
     if(map.isPassable(r, c)){
-      tempNode = new Node(currentNode, new Coordinate(r, c), currentNode.getRunningCost() + 1);
+      tempNode = new Node(currentNode, new Coordinate(r, c), currentNode.getRunningCost() + map.cells[r][c].getTerrainCost());
 
       // making sure the node isn't already closed
       if(closedNodes.contains(tempNode) == false){
